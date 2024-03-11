@@ -23,7 +23,10 @@ def lernotas():
 
 def calcular_media(ap1, ap2,  avaliacaosub, ac):
     menorap = min(ap1, ap2)
-    return (menorap +  avaliacaosub) * 0.4 + ac * 0.2
+    maiorap = max(ap1, ap2)
+    if avaliacaosub > menorap:
+        menorap = avaliacaosub
+        return (menorap + maiorap) * 0.4 + ac * 0.2
 
 def main_():
     nome = input("Insira seu nome: ")
